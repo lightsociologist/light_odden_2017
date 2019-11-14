@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Code for Light and Odden (2017)
 
 Author: Ryan Light
@@ -24,3 +25,7 @@ Here is a brief descripton of the of the scripts:
 
 - stm_models.R consists of the code for making the stms
 - reg_models_tbls_figs.R consists of the code for the relevant parts of the paper  
+=======
+# light_odden_2017
+Code for Light and Odden (2017)
+>>>>>>> 9a0d193428e48f22136c5ff18941312acee7c153
