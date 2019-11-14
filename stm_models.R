@@ -1,14 +1,15 @@
-#This program develops stm models
+#This code develops stm models
 #Light and Odden (2017)
 
 #4/1/2016
 
 library(stm)
+library(tm)
 
 #Importing data and fixing publish year for stm...not needed once data is 
 #in r.
 
-readdat <- read.csv("~/GitHub/light_odden_2017/data/pos_rr.txt")
+readdat <- read.csv("data/pos_rr.txt")
 
 tmp <-  as.Date(readdat$publish_date,'%m/%d/%Y')
 tmp2 <- format(tmp,'%Y')
@@ -48,7 +49,7 @@ text(storpos$results$semcoh, storpos$results$exclus, labels=storpos$results$K,
 xax <- seq(5,80,5)
 
 plot(xax, storpos$results$heldout, type="l", col=" bv  black")
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #plotting exclusivity by topics
 
 xax <- seq(5,100,5)
@@ -81,7 +82,7 @@ specmeta$id <- 1:nrow(specmeta)
 
 tot_spec2 <- merge(spectheta, specmeta, by="id")
 
-varad <- read.csv("~/GitHub/light_odden_2017/data/pitchvaradd.csv")
+varad <- read.csv("data/pitchvaradd.csv")
 
 spectheta$id <- 1:nrow(spectheta)
 specmeta <- as.data.frame(out$meta)
@@ -89,19 +90,20 @@ specmeta$id <- 1:nrow(specmeta)
 
 tot_spec2 <- merge(spectheta, specmeta, by="id")
 
-#merge lda results with 
+#merge lda results with varad that removes reviews that don't have a score (the dependent variable moving forward)
+#these are mostly very early reviews.
 
 tp25 <- merge(varad, tot_spec2, by="nid")
 
-#save(tp25, file = "~/GitHub/light_odden_2017/data/tp25.Rda")
+#save(tp25, file = "data/tp25.Rda")
 
-#save(spectheta, file = "~/GitHub/light_odden_2017/data/spectheta.Rda")
+#save(spectheta, file = "data/spectheta.Rda")
 
-#save(specmeta, file = "~/GitHub/light_odden_2017/data/specmeta.Rda")
+#save(specmeta, file = "data/specmeta.Rda")
 
-#save(lda25, file = "~/GitHub/light_odden_2017/data/lda25.Rda")
+#save(lda25, file = "data/lda25.Rda")
 
-#save(storpos, file = "~/GitHub/light_odden_2017/data/spectralk.Rda")
+#save(storpos, file = "data/spectralk.Rda")
 
-#save(totpitch, file = "C:/Users/light/Documents/GitHub/light_odden_2017/data/totpitch.Rda")
+#save(totpitch, file = "data/totpitch.Rda")
 

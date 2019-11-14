@@ -1,4 +1,4 @@
-#This program develops regression models, tables, and figures
+#This code develops regression models, tables, and figures
 #Light and Odden (2017)
 
 #4/1/2016
@@ -7,7 +7,7 @@ library("dplyr")
 
 #This file has all of the relevant pieces including words (wrds)
 
-load("~/GitHub/light_odden_2017/data/tp25.Rda")
+load("data/tp25.Rda")
 
 #add age of review variable;
 
@@ -91,7 +91,7 @@ best.noint <- glm(best ~ V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10
 summary(best.noint)
 logLik(best.noint)
 
-#This is finla model for Table5.B
+#This is final model for Table5.B
 
 best2.selint <- glm(best2~ V1 + V2 + V3*age + V4 + V5 + V6 + V7 + V8*age + V9 + V10*age 
                     + V11 + V12*age + V13 + V14 + V15 + V16 + V17 + V18*age + V19 + 
