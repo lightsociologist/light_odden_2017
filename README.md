@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Code for Light and Odden (2017)
 
 Author: Ryan Light
